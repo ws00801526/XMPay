@@ -57,18 +57,17 @@ typedef NS_ENUM(NSUInteger, XMPayMethod){
 
 #define WX_APP_ID          @"" //微信支付APPID
 #define WX_APP_SECRET      @"" //微信支付appsecret
-//微信支付  商户号，填写商户对应参数
-#define WX_MCH_ID          @""
-//微信支付 商户API密钥，填写相应参数
-#define WX_PARTNER_KEY     @""
+#define WX_MCH_ID          @"" //微信支付  商户号，填写商户对应参数
+#define WX_PARTNER_KEY     @"" //微信支付 商户API密钥，填写相应参数
+
 //支付结果回调页面
 #define WX_NOTIFY_URL      @"http://wxpay.weixin.qq.com/pub_v2/pay/notify.v2.php"
 
 #pragma mark - 支付宝支付 相关定义
 
-#define ALI_PARTNER     @"2088021350890851"     //支付宝partner
-#define ALI_SELLER      @"support@yooomy.com"     //支付宝seller
-#define ALI_PRIVATE_KEY @"2121"     //支付宝私钥加密
+#define ALI_PARTNER     @""     //支付宝partner
+#define ALI_SELLER      @""     //支付宝seller
+#define ALI_PRIVATE_KEY @""     //支付宝私钥加密
 #define ALI_APP_SCHEME @""      //支付宝回调应用配置,需要在infoscheme中配置相同字符串
 #define ALI_NOTIFY_URL @""      //支付宝回调地址
 
