@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9M9-1F-Xoo">
+                                <rect key="frame" x="270" y="244" width="60" height="30"/>
+                                <state key="normal" title="微信支付">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="payWx:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mvq-Rc-1sV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mn8-Ew-URe">
+                                <rect key="frame" x="262.5" y="290" width="75" height="30"/>
+                                <state key="normal" title="支付宝支付">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="payAli:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9YQ-hg-DGw"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入订单描述" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n9t-Vt-cHY">
+                                <rect key="frame" x="240.5" y="82" width="119" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入订单金额" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mrL-Fj-O6m">
+                                <rect key="frame" x="240.5" y="128" width="119" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入订单标题" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vSe-C5-kyl">
+                                <rect key="frame" x="240.5" y="36" width="119" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n9t-Vt-cHY" firstAttribute="top" secondItem="vSe-C5-kyl" secondAttribute="bottom" constant="16" id="0e7-cK-R8x"/>
+                            <constraint firstItem="mn8-Ew-URe" firstAttribute="top" secondItem="9M9-1F-Xoo" secondAttribute="bottom" constant="16" id="73w-i2-JeX"/>
+                            <constraint firstItem="mrL-Fj-O6m" firstAttribute="top" secondItem="n9t-Vt-cHY" secondAttribute="bottom" constant="16" id="Nra-aG-nuC"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="mn8-Ew-URe" secondAttribute="bottom" constant="280" id="Ug6-C3-tHR"/>
+                            <constraint firstAttribute="centerX" secondItem="mrL-Fj-O6m" secondAttribute="centerX" id="Zgb-BP-AVB"/>
+                            <constraint firstAttribute="centerX" secondItem="9M9-1F-Xoo" secondAttribute="centerX" id="ezQ-GC-nf4"/>
+                            <constraint firstAttribute="centerX" secondItem="vSe-C5-kyl" secondAttribute="centerX" id="q4E-d4-Cv8"/>
+                            <constraint firstAttribute="centerX" secondItem="n9t-Vt-cHY" secondAttribute="centerX" id="tng-g4-FxC"/>
+                            <constraint firstAttribute="centerX" secondItem="mn8-Ew-URe" secondAttribute="centerX" id="xT7-4z-lFD"/>
+                            <constraint firstItem="vSe-C5-kyl" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="ybP-h4-Fpu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
