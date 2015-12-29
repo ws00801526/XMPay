@@ -10,6 +10,7 @@
 
 #import "XMPay.h"
 
+
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *payTitleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *payPriceTextField;
