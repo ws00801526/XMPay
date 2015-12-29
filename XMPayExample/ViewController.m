@@ -11,6 +11,9 @@
 #import "XMPay.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *payTitleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *payPriceTextField;
+@property (weak, nonatomic) IBOutlet UITextField *payDescTextField;
 
 @end
 
@@ -25,14 +28,40 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)payWx:(id)sender {
     
-    [XMPay payLocalWithArguments:@{XM_PAY_ORDER_ID_KEY:@"13131329321-wx",XM_PAY_ORDER_DESC_KEY:@"测试支付而已",XM_PAY_ORDER_NAME_KEY:@"测试支付标题",XM_PAY_ORDER_PRICE_KEY:@(1.1f)} payMethod:XMPayWithWX];
+    if (self.payPriceTextField.text.length == 0 || self.payDescTextField.text.length == 0 || self.payTitleTextField.text.length == 0) {
+        NSLog(@"请输入完整的支付参数");
+        return;
+    }
+    
+    [XMPay payLocalWithArguments:@{XM_PAY_ORDER_ID_KEY:[self radomString:18],XM_PAY_ORDER_DESC_KEY:self.payDescTextField.text,XM_PAY_ORDER_NAME_KEY:self.payTitleTextField.text,XM_PAY_ORDER_PRICE_KEY:@([self.payPriceTextField.text floatValue])} payMethod:XMPayWithWX];
     
 }
 
 - (IBAction)payAli:(id)sender {
     
-    [XMPay payLocalWithArguments:@{XM_PAY_ORDER_ID_KEY:@"13131329321-ali",XM_PAY_ORDER_DESC_KEY:@"测试支付而已",XM_PAY_ORDER_NAME_KEY:@"测试支付标题",XM_PAY_ORDER_PRICE_KEY:@(1.1f)} payMethod:XMPayWithALI];
+    if (self.payPriceTextField.text.length == 0 || self.payDescTextField.text.length == 0 || self.payTitleTextField.text.length == 0) {
+        NSLog(@"请输入完整的支付参数");
+        return;
+    }
+    
+    [XMPay payLocalWithArguments:@{XM_PAY_ORDER_ID_KEY:[self radomString:18],XM_PAY_ORDER_DESC_KEY:self.payDescTextField.text,XM_PAY_ORDER_NAME_KEY:self.payTitleTextField.text,XM_PAY_ORDER_PRICE_KEY:@([self.payPriceTextField.text floatValue])} payMethod:XMPayWithALI];
+
 }
+
+/**
+ *  随机生成指定长度字符串
+ *
+ *  @param length 字符串长度
+ *
+ *  @return 生成的指定长度的字符串
+ */
+- (NSString *)radomString:(NSUInteger)length {
+    char data[length];
+    for (int x=0;x<length;data[x++] = (char)('A' + (arc4random_uniform(26))));
+    return [[NSString alloc] initWithBytes:data length:32 encoding:NSUTF8StringEncoding];
+}
+
 @end
