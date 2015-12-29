@@ -27,9 +27,9 @@ project_dir
 ####2.集成步骤
 
 1. 导入XMPay目录至工程文件内
-![](CB80212C-0C26-468A-B6A0-9BEFA192867E.png)
+![](http://7xlt1j.com1.z0.glb.clouddn.com/XMPay-1.png)
 2.添加支持类库 
-![](099555C5-DE1C-4CC0-94F5-B8F4AC94FE35.png)
+![](http://7xlt1j.com1.z0.glb.clouddn.com/XMPay-2.png)
 3.参考 AppDelegate+XMPay配置回调
 4.在XMPayDefines.h 中配置微信支付,支付宝支付相关参数定义
 5.是用XMPay 唤起支付
@@ -37,4 +37,10 @@ project_dir
 
 ####3.相关问题
 1.相关openssl头文件找不到,需要在Build settings - Header Search Path 中配置相关搜索路径,一下截图可以参考下
-![](D6E19749-AAE5-40B7-9ACF-9A5CF675C8AC.png)
+![](http://7xlt1j.com1.z0.glb.clouddn.com/XMPay-3.png)
+
+2.无法打开cannotOpenUrl(safepay,alipay,weixin)
+![](http://7xlt1j.com1.z0.glb.clouddn.com/XMPay-4.png)
+
+3.无法调起微信支付
+* appdelegate 中没有注册WX

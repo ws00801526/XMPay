@@ -118,7 +118,7 @@
     wxOrder.body = arguments[XM_PAY_ORDER_NAME_KEY];
     
     //因为微信支付的单位是分 如果传入的是元的单位 进行*100处理 ,如果传入是分的单位则不进行处理
-    wxOrder.totalFee = [NSString stringWithFormat:@"%f",[arguments[XM_PAY_ORDER_PRICE_KEY] floatValue] * 100];
+    wxOrder.totalFee = [NSString stringWithFormat:@"%.0f",[arguments[XM_PAY_ORDER_PRICE_KEY] floatValue] * 100];
     wxOrder.tradeNo = arguments[XM_PAY_ORDER_ID_KEY];
     [wxOrder startPay];
 }

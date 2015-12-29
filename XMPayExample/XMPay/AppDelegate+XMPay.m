@@ -35,7 +35,6 @@
                                              
                                              //TODO 处理回调结果
                                              NSLog(@"result = %@",resultDic);
-                                             NSString *resultStr = resultDic[@"result"];
                                              
                                          }];
         

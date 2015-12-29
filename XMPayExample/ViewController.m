@@ -27,12 +27,12 @@
 }
 - (IBAction)payWx:(id)sender {
     
-    [XMPay payLocalWithArguments:@{@"":@"",@"":@"",@"":@""} payMethod:XMPayWithWX];
+    [XMPay payLocalWithArguments:@{XM_PAY_ORDER_ID_KEY:@"13131329321-wx",XM_PAY_ORDER_DESC_KEY:@"测试支付而已",XM_PAY_ORDER_NAME_KEY:@"测试支付标题",XM_PAY_ORDER_PRICE_KEY:@(1.1f)} payMethod:XMPayWithWX];
     
 }
 
 - (IBAction)payAli:(id)sender {
     
-    [XMPay payLocalWithArguments:@{@"":@"",@"":@"",@"":@""} payMethod:XMPayWithALI];
+    [XMPay payLocalWithArguments:@{XM_PAY_ORDER_ID_KEY:@"13131329321-ali",XM_PAY_ORDER_DESC_KEY:@"测试支付而已",XM_PAY_ORDER_NAME_KEY:@"测试支付标题",XM_PAY_ORDER_PRICE_KEY:@(1.1f)} payMethod:XMPayWithALI];
 }
 @end

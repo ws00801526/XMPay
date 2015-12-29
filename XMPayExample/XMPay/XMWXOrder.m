@@ -32,7 +32,7 @@
         self.partnerKey = WX_PARTNER_KEY;
         self.mchID = WX_MCH_ID;
         self.notifyUrl = WX_NOTIFY_URL;
-        self.tradeType = @"IOS_APP";
+        self.tradeType = @"APP";
         self.nonceStr = [XMPayUtil generateRandomStr:10];
     }
     return self;
@@ -68,7 +68,7 @@
         UInt32 timeStamp =[timeSp intValue];
         request.timeStamp= timeStamp;
         request.sign = [self md5StrForDict:@{@"appid":WX_APP_ID,@"partnerid":request.partnerId,@"noncestr":request.nonceStr,@"prepayid":request.prepayId,@"package":request.package,@"timestamp":[NSString stringWithFormat:@"%u",(unsigned int)request.timeStamp]}];
-        [WXApi sendReq:request];
+        NSLog(@"%d",[WXApi sendReq:request]);
     }
 }
 
