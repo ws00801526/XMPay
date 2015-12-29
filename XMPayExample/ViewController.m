@@ -36,7 +36,8 @@
         return;
     }
     
-    [XMPay payLocalWithArguments:@{XM_PAY_ORDER_ID_KEY:[self radomString:18],XM_PAY_ORDER_DESC_KEY:self.payDescTextField.text,XM_PAY_ORDER_NAME_KEY:self.payTitleTextField.text,XM_PAY_ORDER_PRICE_KEY:@([self.payPriceTextField.text floatValue])} payMethod:XMPayWithWX];
+    NSString *randomStr = [self radomString:18];
+    [XMPay payLocalWithArguments:@{XM_PAY_ORDER_ID_KEY:randomStr,XM_PAY_ORDER_DESC_KEY:self.payDescTextField.text,XM_PAY_ORDER_NAME_KEY:self.payTitleTextField.text,XM_PAY_ORDER_PRICE_KEY:@([self.payPriceTextField.text floatValue])} payMethod:XMPayWithWX];
     
 }
 
@@ -47,7 +48,9 @@
         return;
     }
     
-    [XMPay payLocalWithArguments:@{XM_PAY_ORDER_ID_KEY:[self radomString:18],XM_PAY_ORDER_DESC_KEY:self.payDescTextField.text,XM_PAY_ORDER_NAME_KEY:self.payTitleTextField.text,XM_PAY_ORDER_PRICE_KEY:@([self.payPriceTextField.text floatValue])} payMethod:XMPayWithALI];
+    NSString *randomStr = [self radomString:18];
+
+    [XMPay payLocalWithArguments:@{XM_PAY_ORDER_ID_KEY:randomStr,XM_PAY_ORDER_DESC_KEY:self.payDescTextField.text,XM_PAY_ORDER_NAME_KEY:self.payTitleTextField.text,XM_PAY_ORDER_PRICE_KEY:@([self.payPriceTextField.text floatValue])} payMethod:XMPayWithALI];
 
 }
 
@@ -60,8 +63,8 @@
  */
 - (NSString *)radomString:(NSUInteger)length {
     char data[length];
-    for (int x=0;x<length;data[x++] = (char)('A' + (arc4random_uniform(26))));
-    return [[NSString alloc] initWithBytes:data length:32 encoding:NSUTF8StringEncoding];
+    for (int x=0;x<length;data[x++] = (char)('A' + (arc4random() % (26))));
+    return [[[NSString alloc] initWithBytes:data length:length encoding:NSUTF8StringEncoding] uppercaseString];
 }
 
 @end
